@@ -1,0 +1,45 @@
+2019-08-20 18:23:07.3300 Error Parsing configuration from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config.  ---> System.ArgumentException: Unknown log level: Information
+   at NLog.LogLevel.FromString(String levelName)
+   at NLog.Config.LoggingConfigurationParser.ParseRuleElement(ILoggingConfigurationElement loggerElement)
+   at NLog.Config.LoggingConfigurationParser.ParseRulesElement(ILoggingConfigurationElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2019-08-20 18:23:07.3809 Warn Failed loading config from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config. Invalid XML?
+2019-08-20 18:24:49.8235 Error Parsing configuration from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config.  ---> System.ArgumentException: Unknown log level: Information
+   at NLog.LogLevel.FromString(String levelName)
+   at NLog.Config.LoggingConfigurationParser.ParseRuleElement(ILoggingConfigurationElement loggerElement)
+   at NLog.Config.LoggingConfigurationParser.ParseRulesElement(ILoggingConfigurationElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2019-08-20 18:24:49.8288 Warn Failed loading config from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config. Invalid XML?
+2019-08-20 18:35:52.0848 Error Parsing configuration from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config.  ---> System.ArgumentException: Unknown log level: Information
+   at NLog.LogLevel.FromString(String levelName)
+   at NLog.Config.LoggingConfigurationParser.ParseRuleElement(ILoggingConfigurationElement loggerElement)
+   at NLog.Config.LoggingConfigurationParser.ParseRulesElement(ILoggingConfigurationElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2019-08-20 18:35:52.0946 Warn Failed loading config from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config. Invalid XML?
+2019-08-20 21:45:41.7116 Error Parsing configuration from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config.  ---> System.ArgumentException: Unknown log level: Information
+   at NLog.LogLevel.FromString(String levelName)
+   at NLog.Config.LoggingConfigurationParser.ParseRuleElement(ILoggingConfigurationElement loggerElement)
+   at NLog.Config.LoggingConfigurationParser.ParseRulesElement(ILoggingConfigurationElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2019-08-20 21:45:41.7167 Warn Failed loading config from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config. Invalid XML?
+2019-08-20 21:50:19.1456 Error Parsing configuration from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config failed. Exception: NLog.NLogConfigurationException: Exception when parsing /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config.  ---> System.ArgumentException: Unknown log level: Information
+   at NLog.LogLevel.FromString(String levelName)
+   at NLog.Config.LoggingConfigurationParser.ParseRuleElement(ILoggingConfigurationElement loggerElement)
+   at NLog.Config.LoggingConfigurationParser.ParseRulesElement(ILoggingConfigurationElement rulesElement, IList`1 rulesCollection)
+   at NLog.Config.LoggingConfigurationParser.LoadConfig(ILoggingConfigurationElement nlogConfig, String basePath)
+   at NLog.Config.XmlLoggingConfiguration.ParseNLogElement(ILoggingConfigurationElement nlogElement, String filePath, Boolean autoReloadDefault)
+   at NLog.Config.XmlLoggingConfiguration.Initialize(XmlReader reader, String fileName, Boolean ignoreErrors)
+   --- End of inner exception stack trace ---
+2019-08-20 21:50:19.1503 Warn Failed loading config from /Users/aquila/Projects/Light.Fass/src/Light.Fass/bin/Debug/netcoreapp2.2/NLog.config. Invalid XML?
