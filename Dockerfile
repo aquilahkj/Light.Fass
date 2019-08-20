@@ -16,6 +16,7 @@ ENV MAX_UPLOAD_SIZE "5M"
 ENV USE_LOG "false"
 ENV FILE_DIRECTORY "file"
 ENV THUMBNAIL_DIRECTORY "thumbnail"
+EXPOSE 80
 WORKDIR /app
 COPY --from=build-env /app .
 ENTRYPOINT ["dotnet", "Light.Fass.dll"]
