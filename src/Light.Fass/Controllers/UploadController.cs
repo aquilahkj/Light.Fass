@@ -62,6 +62,7 @@ namespace Light.Fass.Controllers
             var protectFlag = protect == 1;
 
             var code = string.Concat(DateTime.Now.ToString("yyyyMMddHHmmss"), protectFlag ? "1" : "0", "000", random.Next(1000, 9999));
+
             var fileName = file.FileName;
             var index = fileName.LastIndexOf('.');
             if (index <= 0 || fileName.Length < index + 1) {
@@ -77,5 +78,6 @@ namespace Light.Fass.Controllers
             logger.LogInformation($"upload|{user}|{newName}|{file.Length}|{file.Name}");
             return new UploadResult() { FileName = newName, Message = "ok" };
         }
+
     }
 }

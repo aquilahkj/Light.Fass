@@ -66,7 +66,7 @@ namespace Light.Fass
         public async Task SaveFileAsync(IFormFile file, string fileName)
         {
             var path = Path.Combine(fileDirectory, fileName);
-            using (var stream = new FileStream(path, FileMode.Create)) {
+            using (var stream = new FileStream(path, FileMode.CreateNew)) {
                 await file.CopyToAsync(stream);
             }
         }

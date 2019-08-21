@@ -33,7 +33,11 @@ namespace Light.Fass
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+             .ConfigureApiBehaviorOptions(options => {
+                 options.UseInvalidModelStateException();
+             });
             services.AddMvc(x => {
                 x.Filters.Add<ExceptionFilter>();
             });
@@ -52,7 +56,7 @@ namespace Light.Fass
                     //获取应用程序所在目录（绝对，不受工作目录影响，建议采用此方法获取路径）
                     var apiXmlPath = Path.Combine(basePath, "Light.Fass.xml");
                     c.IncludeXmlComments(apiXmlPath);
-                    
+
                 });
             }
             services.AddSingleton(new FileModule(settings.FileSetting));

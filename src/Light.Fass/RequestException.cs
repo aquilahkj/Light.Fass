@@ -4,9 +4,9 @@ namespace Light.Fass
     /// <summary>
     /// 
     /// </summary>
-    public class AuthException : Exception
+    public class RequestException : Exception
     {
-        public AuthException(string message) : base(message)
+        public RequestException(string message) : base(message)
         {
         }
     }

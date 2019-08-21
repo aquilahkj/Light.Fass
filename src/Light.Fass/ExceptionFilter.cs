@@ -44,6 +44,10 @@ namespace Light.Fass
                 code = 404;
                 message = ex.Message;
             }
+            else if (ex is ParameterException) {
+                code = 400;
+                message = ex.Message;
+            }
             else if (ex is BadHttpRequestException badHttpRequestException) {
                 code = badHttpRequestException.StatusCode;
                 message = ex.Message;
