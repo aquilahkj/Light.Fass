@@ -10,8 +10,15 @@ using Microsoft.Extensions.Logging;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
@@ -25,7 +32,6 @@ namespace Light.Fass
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
             var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddCommandLine(args)
                 .Build();
             var builder = WebHost.CreateDefaultBuilder(args)

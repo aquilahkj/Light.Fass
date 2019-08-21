@@ -3,8 +3,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CacheSetting
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static CacheSetting LoadSettings(IConfiguration configuration)
         {
             var cacheSetting = new CacheSetting();
@@ -65,24 +73,33 @@ namespace Light.Fass
             return cacheSetting;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public int UploadCacheTime
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public int MaxCacheCount
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public int MaxCacheTime
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public long MaxCacheEntitySize
         {
             get;

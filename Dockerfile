@@ -11,11 +11,11 @@ RUN dotnet publish -c Release -o /app
 FROM aquilahkj/dotnet:2.2-aspnetcore-runtime-gdi
 ENV TZ "Asia/Shanghai"
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-ENV KEY "lightfass"
+ENV KEY "fasskey"
 ENV MAX_UPLOAD_SIZE "5M"
 ENV USE_LOG "false"
-ENV FILE_DIRECTORY "file"
-ENV THUMBNAIL_DIRECTORY "thumbnail"
+ENV FILE_DIRECTORY "/app/file"
+ENV THUMBNAIL_DIRECTORY "/app/thumbnail"
 EXPOSE 80
 WORKDIR /app
 COPY --from=build-env /app .

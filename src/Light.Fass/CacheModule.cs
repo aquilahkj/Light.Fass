@@ -5,6 +5,9 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CacheModule
     {
         readonly MemoryCache uploadCache;
@@ -19,6 +22,10 @@ namespace Light.Fass
 
         readonly long maxCacheEntitySize;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cacheSetting"></param>
         public CacheModule(CacheSetting cacheSetting)
         {
             uploadCache = new MemoryCache(new MemoryCacheOptions());
@@ -49,16 +56,32 @@ namespace Light.Fass
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="name"></param>
         public void SetUploadName(string token, string name)
         {
             uploadCache.Set(token, name, uploadTimespan);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public bool TryGetUploadName(string token, out string value)
         {
             return uploadCache.TryGetValue(token, out value);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileInfo"></param>
+        /// <returns></returns>
         public async Task<byte[]> GetAndSetFileCache(FileInfo fileInfo)
         {
             byte[] buffer;
@@ -80,6 +103,10 @@ namespace Light.Fass
             return buffer;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileName"></param>
         public void RemoveFileCache(string fileName)
         {
             fileCache.Remove(fileName);

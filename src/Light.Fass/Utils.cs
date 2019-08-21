@@ -3,8 +3,17 @@ using System.Text.RegularExpressions;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class Utils
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool TryParseByteNumber(string content, out long value)
         {
             var regex = new Regex(@"^(?<num>\d+)(?<unit>[kmg]?)$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
@@ -37,6 +46,10 @@ namespace Light.Fass
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static long GetUtcTimestamp()
         {
             TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1);

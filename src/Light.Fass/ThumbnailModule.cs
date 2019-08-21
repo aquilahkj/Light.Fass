@@ -5,13 +5,17 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ThumbnailModule
     {
-        public class Options
+        class Options
         {
             public string Ext
             {
@@ -49,10 +53,19 @@ namespace Light.Fass
         private readonly Dictionary<string, ImageCodecInfo> codecDict;
 
         private readonly Dictionary<string, Options> optionsDict;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="thumbnailSetting"></param>
         public ThumbnailModule(ThumbnailSetting thumbnailSetting)
         {
-            fileDirectory = string.IsNullOrEmpty(thumbnailSetting.ThumbnailDirectory) ? "thumbnail" : thumbnailSetting.ThumbnailDirectory;
+            if (!string.IsNullOrEmpty(thumbnailSetting.ThumbnailDirectory)) {
+                fileDirectory = thumbnailSetting.ThumbnailDirectory;
+            }
+            else {
+                var basePath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+                fileDirectory = Path.Combine(basePath, "thumbnail");
+            }
             var dir = new DirectoryInfo(fileDirectory);
             if (!dir.Exists) {
                 dir.Create();
@@ -114,7 +127,13 @@ namespace Light.Fass
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileInfo"></param>
+        /// <param name="type"></param>
+        /// <param name="thumbnailInfo"></param>
+        /// <returns></returns>
         public bool TryGetAndSetThumbnailFileInfo(FileInfo fileInfo, string type, out FileInfo thumbnailInfo)
         {
             thumbnailInfo = null;
@@ -151,6 +170,11 @@ namespace Light.Fass
             return true;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         public FileInfo[] GetFiles(string fileName)
         {
             var index = fileName.LastIndexOf('.');
@@ -222,7 +246,7 @@ namespace Light.Fass
                                 toHeight = sourceImage.Height * width / sourceImage.Width;
                             }
                             else {
-                                if(width > sourceImage.Height) {
+                                if (width > sourceImage.Height) {
                                     return false;
                                 }
                                 toHeight = width;

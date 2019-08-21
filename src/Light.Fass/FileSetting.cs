@@ -3,8 +3,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class FileSetting
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static FileSetting LoadSettings(IConfiguration configuration)
         {
             var fileSetting = new FileSetting();
@@ -28,13 +36,17 @@ namespace Light.Fass
             }
             return fileSetting;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public string FileDirectory
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public string[] AllowExts
         {
             get;

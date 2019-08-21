@@ -3,6 +3,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MimeSetting
     {
         public static MimeSetting LoadSettings(IConfiguration configuration)
@@ -28,12 +31,18 @@ namespace Light.Fass
             return mimeSetting;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public MimeInfo[] MimeInfos
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string DefaultMime
         {
             get;

@@ -3,8 +3,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class ThumbnailSetting
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static ThumbnailSetting LoadSettings(IConfiguration configuration)
         {
             var thumbnailSetting = new ThumbnailSetting();
@@ -37,18 +45,27 @@ namespace Light.Fass
             return thumbnailSetting;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string ThumbnailDirectory
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string[] ThumbnailExts
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public ThumbnailType[] Types
         {
             get;

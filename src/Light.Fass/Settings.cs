@@ -34,12 +34,31 @@ namespace Light.Fass
             catch (Exception ex) {
                 throw new ConfigurationException("UseLog Variable Error", ex);
             }
+
+            try {
+                var useSwagger = Environment.GetEnvironmentVariable("USE_SWAGGER");
+                if (!string.IsNullOrEmpty(useSwagger)) {
+                    settings.UseSwagger = bool.Parse(useSwagger);
+                }
+                else {
+                    settings.UseSwagger = configuration.GetValue<bool>("UseSwagger");
+                }
+            }
+            catch (Exception ex) {
+                throw new ConfigurationException("UseSwagger Variable Error", ex);
+            }
             settings.AuthSetting = AuthSetting.LoadSettings(configuration);
             settings.FileSetting = FileSetting.LoadSettings(configuration);
             settings.ThumbnailSetting = ThumbnailSetting.LoadSettings(configuration);
             settings.MimeSetting = MimeSetting.LoadSettings(configuration);
             settings.CacheSetting = CacheSetting.LoadSettings(configuration);
             return settings;
+        }
+
+        public bool UseSwagger
+        {
+            get;
+            set;
         }
 
         public bool UseLog

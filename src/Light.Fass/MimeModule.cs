@@ -2,12 +2,19 @@
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MimeModule
     {
         private readonly FileExtensionContentTypeProvider contentTypeProvider;
 
         private readonly string defaultMime;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mimeSetting"></param>
         public MimeModule(MimeSetting mimeSetting)
         {
             this.contentTypeProvider = new FileExtensionContentTypeProvider();
@@ -24,6 +31,11 @@ namespace Light.Fass
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
         public string GetMime(string fileName)
         {
             if (!contentTypeProvider.TryGetContentType(fileName, out string contentType)) {

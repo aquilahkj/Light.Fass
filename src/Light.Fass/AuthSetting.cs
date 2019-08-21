@@ -3,8 +3,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthSetting
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static AuthSetting LoadSettings(IConfiguration configuration)
         {
             var authSetting = new AuthSetting();
@@ -36,13 +44,17 @@ namespace Light.Fass
             return authSetting;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
         public string Key
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public int OperatingValidTime
         {
             get;

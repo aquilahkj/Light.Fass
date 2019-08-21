@@ -4,12 +4,18 @@ using System.Text;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AuthModule
     {
         private readonly string key;
 
         private readonly int operatingValidTime;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="authSetting"></param>
         public AuthModule(AuthSetting authSetting)
         {
             this.key = authSetting.Key;
@@ -20,7 +26,14 @@ namespace Light.Fass
                 this.operatingValidTime = 60;
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="fileName"></param>
+        /// <param name="timestamp"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public bool ValidDeleteToken(string user, string fileName, long timestamp, string token)
         {
             if (string.IsNullOrEmpty(token)) {
@@ -41,7 +54,15 @@ namespace Light.Fass
             var diff = current - timestamp;
             return diff >= 0 && diff <= operatingValidTime;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="fileName"></param>
+        /// <param name="protect"></param>
+        /// <param name="timestamp"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public bool ValidUploadToken(string user, string fileName, int protect, long timestamp, string token)
         {
             if (string.IsNullOrEmpty(token)) {
@@ -59,7 +80,14 @@ namespace Light.Fass
             var diff = current - timestamp;
             return diff >= 0 && diff <= operatingValidTime;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="fileName"></param>
+        /// <param name="expired"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         public bool ValidAccessToken(string user, string fileName, long expired, string token)
         {
             if (string.IsNullOrEmpty(token)) {
@@ -81,7 +109,7 @@ namespace Light.Fass
         }
 
         /// <summary>
-        /// Encrypts Md5.
+        /// Encrypts data.
         /// </summary>
         /// <returns>The password.</returns>
         /// <param name="content">Password.</param>
