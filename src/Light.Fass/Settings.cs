@@ -4,8 +4,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Settings
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static Settings LoadSettings(IConfiguration configuration)
         {
             var settings = new Settings();
@@ -54,49 +62,65 @@ namespace Light.Fass
             settings.CacheSetting = CacheSetting.LoadSettings(configuration);
             return settings;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public bool UseSwagger
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public bool UseLog
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public long? MaxUploadSize
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public AuthSetting AuthSetting
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public FileSetting FileSetting
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public ThumbnailSetting ThumbnailSetting
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public MimeSetting MimeSetting
         {
             get;
             set;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public CacheSetting CacheSetting
         {
             get;

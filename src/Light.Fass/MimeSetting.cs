@@ -8,6 +8,11 @@ namespace Light.Fass
     /// </summary>
     public class MimeSetting
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static MimeSetting LoadSettings(IConfiguration configuration)
         {
             var mimeSetting = new MimeSetting();

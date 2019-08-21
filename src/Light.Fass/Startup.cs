@@ -18,19 +18,32 @@ using Swashbuckle.AspNetCore.Swagger;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Startup
     {
-        Settings settings;
+        readonly Settings settings;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
             settings = Settings.LoadSettings(configuration);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
@@ -66,7 +79,12 @@ namespace Light.Fass
             services.AddSingleton(new CacheModule(settings.CacheSetting));
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
+        /// <param name="loggerFactory"></param>
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);

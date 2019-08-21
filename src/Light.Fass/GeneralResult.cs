@@ -6,6 +6,9 @@ namespace Light.Fass
     /// </summary>
     public class GeneralResult
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public string Message
         {
             get;

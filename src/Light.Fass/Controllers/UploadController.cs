@@ -13,6 +13,9 @@ using Microsoft.Extensions.Logging;
 
 namespace Light.Fass.Controllers
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [EnableCors("CorsPolicy")]
     [Route("upload")]
     [ApiController]
@@ -26,6 +29,14 @@ namespace Light.Fass.Controllers
 
         static readonly char[] ForbitChars = { '|', '\r', '\n' };
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="authModule"></param>
+        /// <param name="fileModule"></param>
+        /// <param name="cacheModule"></param>
+        /// <param name="thumbnailModule"></param>
+        /// <param name="loggerFactory"></param>
         public UploadController(AuthModule authModule, FileModule fileModule, CacheModule cacheModule, ThumbnailModule thumbnailModule, ILoggerFactory loggerFactory)
         {
             this.authModule = authModule;
@@ -39,6 +50,8 @@ namespace Light.Fass.Controllers
         /// 
         /// </summary>
         /// <param name="file"></param>
+        /// <param name="protect"></param>
+        /// <param name="user"></param>
         /// <param name="timestamp"></param>
         /// <param name="token"></param>
         /// <returns></returns>

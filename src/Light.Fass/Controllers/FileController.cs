@@ -13,6 +13,9 @@ using Microsoft.Extensions.Options;
 
 namespace Light.Fass
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [EnableCors("CorsPolicy")]
     [Route("file")]
     [ApiController]
@@ -26,7 +29,15 @@ namespace Light.Fass
         private readonly MimeModule mimeModule;
         private readonly CacheModule cacheModule;
         private readonly ILogger logger;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="authModule"></param>
+        /// <param name="fileModule"></param>
+        /// <param name="thumbnailModule"></param>
+        /// <param name="mimeModule"></param>
+        /// <param name="cacheModule"></param>
+        /// <param name="loggerFactory"></param>
         public FileController(AuthModule authModule, FileModule fileModule, ThumbnailModule thumbnailModule, MimeModule mimeModule, CacheModule cacheModule, ILoggerFactory loggerFactory)
         {
             this.authModule = authModule;
@@ -37,7 +48,15 @@ namespace Light.Fass
             this.logger = loggerFactory.CreateLogger("File");
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="user"></param>
+        /// <param name="thumbnail"></param>
+        /// <param name="expired"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         [HttpGet("{filename}")]
         public async Task<ActionResult> GetFileAsync(string filename, [FromQuery(Name = "u")]string user, [FromQuery(Name = "t")]string thumbnail, [FromQuery(Name = "e")]long? expired, [FromQuery(Name = "token")]string token)
         {
@@ -78,6 +97,14 @@ namespace Light.Fass
             return File(file.OpenRead(), contentType);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="user"></param>
+        /// <param name="timestamp"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
         [HttpDelete("{filename}")]
         public ActionResult<GeneralResult> DelateFile(string filename, [FromQuery(Name = "u")]string user, [FromQuery(Name = "t")]long timestamp, [FromQuery(Name = "token")]string token)
         {

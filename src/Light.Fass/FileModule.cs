@@ -80,16 +80,5 @@ namespace Light.Fass
             var path = Path.Combine(fileDirectory, fileName);
             return new FileInfo(path);
         }
-
-        //public bool DeleteFile(string fileName)
-        //{
-        //    var path = Path.Combine(fileDirectory, fileName);
-        //    var fileInfo = new FileInfo(path);
-        //    if (fileInfo.Exists) {
-        //        fileInfo.Delete();
-        //        return true;
-        //    }
-        //    return false;
-        //}
     }
 }
